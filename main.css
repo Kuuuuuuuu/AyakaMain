@@ -67,10 +67,10 @@ body {
 .ripple {
    width: 10px;
    height: 10px;
-   background-color: #b3ffff;
+   background-color: #e6ffff;
    position: fixed;
    border-radius: 50%;
-   border: 1px solid #ffffff59;
+   border: 1px solid #99ffff;
 }
 
 @keyframes ripple-effect {
