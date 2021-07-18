@@ -29,14 +29,6 @@ body {
     text-decoration: none;
 }
 
-.link {
-    font-family: Montserrat;
-    font-weight: 500;
-    font-size: 12px;
-    color: #ffffff;
-    text-decoration: none;
-}
-
 #button {
     padding: 9px 29px;
     background-color: #3399ff;
@@ -47,13 +39,6 @@ body {
 
 #button:hover {
     background-color: #0088a9;
-}
-
-#panel_index {
-    text-align: center;
-    padding: 75px 0px 75px 0px;
-    align-content: center;
-    background-color: rgba(0.0, 0.0, 0.0, 0.3);
 }
 
 #text {
