@@ -359,7 +359,6 @@ ul.social-icons {
 	background: #202225; 
 	border-radius: 4px;
 }
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(84, 81, 81); 
   }
