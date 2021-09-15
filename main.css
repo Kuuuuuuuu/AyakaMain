@@ -138,7 +138,7 @@ body {
   }
 }
 
-.glow {
+.glow-on-hover {
     width: 220px;
     height: 50px;
     border: none;
@@ -151,7 +151,7 @@ body {
     border-radius: 10px;
 }
 
-.glow:before {
+.glow-on-hover:before {
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
@@ -168,19 +168,19 @@ body {
     border-radius: 10px;
 }
 
-.glow:active {
+.glow-on-hover:active {
     color: #000
 }
 
-.glow:active:after {
+.glow-on-hover:active:after {
     background: transparent;
 }
 
-.glow:hover:before {
+.glow-on-hover:hover:before {
     opacity: 1;
 }
 
-.glow:after {
+.glow-on-hover:after {
     z-index: -1;
     content: '';
     position: absolute;
