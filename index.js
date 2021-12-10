@@ -20,5 +20,3 @@ const all = document.body.getElementsByTagName("*");
 for (var i = 0; i < all.length; ++i) {
   all[i].onclick = (event) => event.stopPropagation();
 }
-
-8589934591
