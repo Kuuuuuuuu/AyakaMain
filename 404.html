@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>hee</title>
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
     <style type="text/css">
@@ -22,15 +23,6 @@
 
             height: 100vh;
             width: 100vw;
-        }
-
-        p.overlay-title {
-            font-size: 24px;
-            font-weight: 900;
-            color: black;
-            line-height: 1;
-
-            margin-bottom: 16px;
         }
 
         .overlay-button {
@@ -61,50 +53,6 @@
             background-color: rgb(132, 94, 194);
 
             color: white;
-        }
-
-        #decline-button {
-            color: rgb(132, 94, 194);
-
-            border: 2px solid rgb(132, 94, 194);
-        }
-
-        p.overlay-description {
-            font-size: 16px;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 0.5);
-            line-height: 1.25;
-
-            margin-bottom: 16px;
-        }
-
-        a.overlay-link {
-            display: inline-block;
-
-            text-decoration: none;
-
-            font-size: 16px;
-            font-weight: 500;
-            color: rgb(132, 94, 194);
-            line-height: 1;
-
-            position: relative;
-
-            margin-top: 16px;
-        }
-
-        a.overlay-link::before {
-            position: absolute;
-
-            content: "";
-
-            height: calc(50% + 4px);
-            width: calc(100% + 8px);
-
-            bottom: -4px;
-            left: -4px;
-
-            background-color: rgba(132, 94, 194, 0.1);
         }
 
         .overlay-body {
@@ -147,19 +95,40 @@
             display: none !important;
         }
     </style>
-    <title>ไม่มีไร</title>
 </head>
 <body>
+<div class="overlay" id="overlay">
+    <div class="overlay-body">
+        <div class="overlay-buttons-wrapper">
+            <div class="overlay-button" id="accept-button">Accept</div>
+        </div>
+    </div>
+</div>
 <div class="scare">
     <video class="video" id="video" loop src="video.mp4"></video>
 </div>
 <script type="text/javascript">
     const video = document.getElementById("video");
     const overlay = document.getElementById("overlay");
-    const declineButton = document.getElementById("decline-button");
     const acceptButton = document.getElementById("accept-button");
-    video.play();
-    videoClick();
+
+    let hasClicked;
+
+    window.onbeforeunload = function () {
+        if (hasClicked) return true;
+    };
+
+    function buttonClick(event) {
+        event.preventDefault();
+        if (!hasClicked) hasClicked = true;
+        overlay.hidden = true;
+        video.play();
+        videoClick();
+    }
+
+    setInterval(() => {
+        videoClick();
+    }, 1000);
 
     function videoClick(event) {
         if (event) event.preventDefault();
@@ -171,7 +140,6 @@
     }
 
     acceptButton.addEventListener("click", buttonClick);
-    declineButton.addEventListener("click", buttonClick);
     video.addEventListener("click", videoClick);
 </script>
 </body>
